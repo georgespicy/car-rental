@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.navbar{
+    background-color: #46494c;
+}
+
+.navbar-brand{
+    font-size: 35px;
+    font-family: Rubik Moonrocks;
+    color: #f5cb5c;
+}
+
+.nav-link{
+    color: #f5cb5c;
+    font-family: Oswald;
+}
+
+.navbar-toggler-icon{
+    color: #f5cb5c;
+}
+
+/* home landing page styling */
+
+.carousel-item{
+    height: 450px;
+    width: 100%;
+    background-color: #f5cb5c;
+}
+
+/* home landing page styling */
+
+/* why did you choose us */
+
+.home-header{
+    color: #46494c;
+    margin-top: 200px;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-family: Edu VIC WA NT Beginner;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.why-us-container{
+    background-color: #ffffff;
+}
+
+.why-us-header{
+    font-family: Roboto;
+    font-size: 35px;
+    color: #46494c;
+}
+
+.why-us{
+    height: auto;
+    margin-bottom: 5px;
+    background-color: #f8f9fa;
+    display: flex;
+}
+
+.why-us-words{
+    margin-top: 20px;
+    width: 70%;
+    text-align: left;
+    font-family: poppins;
+    font-size: 13px;
+}
+
+.why-us-icons{
+    margin-top: 20px;
+    width: 25%;
+    font-size: 25px;
+    height: 50px;
+}
+
+.fa-headset,
+.fa-baby-carriage,
+.fa-map-marked-alt,
+.fa-cogs,
+.fa-award,
+.fa-thumbs-up{
+    margin-left: 10%;
+    padding: 20px;
+    background-color: #f5cb5c;
+    border-radius: 100%;
+}
+
+/* what do you know about us */
+
+.about-us-header{
+    font-size: 30px;
+}
+
+.about-us-words{
+    height: 450px;
+    background-color: #46494c;
+    color: #f5cb5c;
+    padding-top: 60px;
+    padding-right: 50px;
+    text-align: left;
+}
+
+.about-us-about{
+    font-size: 18px;   
+    font-family: poppins;
+    letter-spacing: -normal;
+}
+
+.about-us-button{
+    background-color: #f5cb5c;
+    color: #46494c;
+    width: 150px;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.about-us-img{
+    background-image: url(../image/driverlaughing.jpg);
+    background-size: cover;
+    height: 450px;
+}
+
+@media screen and (max-width: 600px) {
+    .about-us-about{
+        font-size: 13px;
+    }    
+}
+
+/* what do you know about us */
+
+/* any question */
+
+.question{
+    background-color: #f5cb5c;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-left: 25%;
+}
+
+.have-a-question{
+    width: 40%;
+    font-family: poppins;
+    font-size: 18px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: poppins;
+    font-weight: 800;
+}
+
+.question-phone-number{
+    width: 20%;
+    font-size: 18px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: poppins;
+    font-weight: 800;
+}
+
+.question-feedback{
+    width: 20%;
+    font-size: 18px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: poppins;
+    font-weight: 800;
+}
+
+.fa-envelope,
+.fa-phone{
+    font-size: 25px;
+    color: #f8f9fa;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+    .question{
+        padding-left: 10%;
+    }  
+
+    .question-feedback,
+    .question-phone-number{
+        font-size: 15px;
+        width: 25%;
+    }
+
+    .have-a-question{
+        font-size: 15px;
+        width: 40%;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .question{
+        padding-left: auto;
+        padding-right: auto;
+    }  
+
+    .question-feedback,
+    .question-phone-number{
+        font-size: 10px;
+    }
+
+    .have-a-question{
+        font-size: 10px;
+    }
+
+}
+
+/* any question */
+
+/* footer */
+
+.footer{
+    background-color: #46494c;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-words{
+    color: #ffffff;
+    font-family: roboto;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.footer-header{
+    font-size: 25px;
+    font-weight: 700;
+    color: #f5cb5c;
+}
+
+.footer-time,
+.time-date{
+    color: #ffffff;
+    font-family: roboto;
+    font-size: 15px;
+    letter-spacing: 1px;  
+}
+
+.fa-facebook,
+.fa-twitter,
+.fa-instagram,
+.fa-linkedin-in{
+    font-size: 25px;
+    margin-right: 5px;
+    color: #ffffff;
+}
+
+/* footer */
