@@ -263,3 +263,53 @@
 }
 
 /* footer */
+
+/* .........................................about................................. */
+
+.about-us-page{
+    height: 200px;
+    width: 100%;
+    background-image: url(../image/ferrari-gf155c59da_1920.jpg);
+    background-position: center;
+}
+
+.about-us-page-words{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(84, 84, 84, 0.8);
+    padding-top: 100px;
+    color: #f5cb5c;
+    font-family: roboto;
+}
+
+
+.about-us-page-welcome{
+    height: 350px;
+    margin-bottom: 10px;
+    background-image: url(../image/guy-key.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.about-us-page-welcome-words{
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    font-family: poppins;
+    font-size: 15px;
+    color: #46494c;
+}
+
+.about-us-page-welcome2{
+    height: 350px;
+    margin-bottom: 10px;
+    background-image: url(../image/bus-driver.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.about-us-page-welcome-words-title{
+    font-size: 25px;
+    font-family: roboto;
+    font-weight: 900;
+}
