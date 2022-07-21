@@ -10,7 +10,8 @@
     text-decoration: none;
 }
 
-.navbar{
+.navbar,
+.dropdown-menu{
     background-color: #46494c;
 }
 
@@ -20,7 +21,8 @@
     color: #f5cb5c;
 }
 
-.nav-link{
+.nav-link,
+.dropdown-item{
     color: #f5cb5c;
     font-family: Oswald;
 }
@@ -342,4 +344,90 @@
     font-size: 20px;
     margin-right: 10px;
     color: #f5cb5c;
+}
+
+
+/* ..........................................car.............................. */
+
+.car-header{
+    height: 70px;
+    width: 100%;
+    background-color: #f5f3f4;
+}
+
+.car-header-name{
+    line-height: 70px;
+    font-size: 25px;
+    margin-left: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: roboto;
+}
+
+.car-img{
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.car-available{
+    height: 70px;
+    width: 100%;
+    background-color: #f5f3f4;
+}
+
+.price-and-view-list{
+    height: 80px;
+    width: 100%;
+    background-color: #fbfbf2;
+    display: flex;
+}
+
+.price-and-view-price{
+    width: 70%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.our-price{
+    font-size: 13px;
+    font-family: roboto;
+    font-weight: 900;
+    color: #46494c;
+    letter-spacing: 1px;
+    margin-left: 5px;
+}
+.our-price-amount{
+    font-size: 25px;
+    color: #f5cb5c;
+    font-weight: 900;
+    margin-left: 5px;
+}
+
+.rent{
+    height: 100%;
+    width: 40%;
+    padding-top: 5%;
+    text-align: center;
+}
+
+.rent a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: roboto;
+    font-weight: 600;
+    color: #46494c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    background-color: #f5cb5c;
+}
+
+@media screen and (max-width: 600px) {
+    .rent{
+        padding-top: 6%;
+    }
 }
