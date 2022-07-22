@@ -349,6 +349,36 @@
 
 /* ..........................................car.............................. */
 
+.car-search{
+    height: 100px;
+}
+
+.search-button{
+    font-size: 17px;
+    font-family: roboto;
+    color: #46494c;
+    border-radius: 15px;
+    border: none;
+    padding: 5px 15px 5px 15px;
+    background-color: #f5cb5c;
+}
+
+.search-input{
+    width: 100%;
+    border: none;
+    border-bottom: #46494c 1px solid;
+    text-align: center;
+    outline: none;
+    font-size: 17px;
+    font-family: roboto;
+}
+
+.car-display{
+    height: auto;
+    width: 95%;
+    margin: auto;
+}
+
 .car-header{
     height: 70px;
     width: 100%;
@@ -367,6 +397,7 @@
 .car-img{
     height: 350px;
     width: 100%;
+    background-image: url(image/car-img1.jpg);
     background-size: cover;
     background-position: center;
 }
