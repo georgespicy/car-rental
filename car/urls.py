@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import toyota
+from .views import car, search, brand
 
 urlpatterns = [
-    path('', toyota, name='toyota')
+    path('', car, name='car'),
+    path('search', search, name='search'),
+    path('brand', brand, name='brand'),
 ]

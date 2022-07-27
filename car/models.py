@@ -4,6 +4,15 @@ from django.core.validators import FileExtensionValidator
 from multiselectfield import MultiSelectField
 # Create your models here.
 
+
+
+class Brand(models.Model):
+    brand_name = models.CharField(max_length=250, unique=True)
+    date_created = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.brand_name
+
 class Car(models.Model):
     state_choice = (
         ('NI', 'Niger'),
@@ -73,7 +82,8 @@ class Car(models.Model):
     for r in range(2000, (datetime.now().year+1)):
         year_choice.append((r, r))
 
-    car_name = models.CharField(verbose_name='car_title',max_length=200)
+    car_name = models.CharField(verbose_name='car_title', max_length=200)
+    brand_name = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True)
     city = models.CharField(max_length=200)
     state = models.CharField(max_length=10, choices=state_choice)
     color = models.CharField(max_length=200)
@@ -83,15 +93,15 @@ class Car(models.Model):
     rent_price = models.PositiveIntegerField()
     description = models.TextField()
     car_photo = models.ImageField(validators=[FileExtensionValidator(
-        [ 'jpg', 'jpeg'])], upload_to='cars_images')
+        ['jpg', 'jpeg'])], upload_to='cars_images')
     car_photo_1 = models.ImageField(validators=[FileExtensionValidator(
-        [ 'jpg', 'jpeg'])], upload_to='cars_images', blank=True)
+        ['jpg', 'jpeg'])], upload_to='cars_images', blank=True)
     car_photo_2 = models.ImageField(validators=[FileExtensionValidator(
-        [ 'jpg', 'jpeg'])], upload_to='cars_images', blank=True)
+        ['jpg', 'jpeg'])], upload_to='cars_images', blank=True)
     car_photo_3 = models.ImageField(validators=[FileExtensionValidator(
-        [ 'jpg', 'jpeg'])], upload_to='cars_images', blank=True)
+        ['jpg', 'jpeg'])], upload_to='cars_images', blank=True)
     car_photo_4 = models.ImageField(validators=[FileExtensionValidator(
-        [ 'jpg', 'jpeg'])], upload_to='cars_images', blank=True)
+        ['jpg', 'jpeg'])], upload_to='cars_images', blank=True)
     features = MultiSelectField(choices=features_choices)
     body_style = models.CharField(max_length=200)
     miles = models.PositiveIntegerField()
@@ -102,9 +112,6 @@ class Car(models.Model):
     is_latest = models.BooleanField(default=False)
     is_booked = models.BooleanField(default=False)
     created_date = models.DateField(default=datetime.now, blank=True)
-
-
-
 
     def str(self):
         return self.car_name

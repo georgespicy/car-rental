@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Toyota page{% endblock  %}
+{% block title %}Cars{% endblock %}
 {% block main %}
 <div class="about-us-page">
     <div class="about-us-page-words">
-        <h1 class="text-center">Toyota Page</h1>
+        <h1 class="text-center">Cars</h1>
     </div>
   </div>
 
@@ -12,10 +12,11 @@
     <div class="row">
       <h1 class="my-5">Cars</h1>
       <div class="col-xxl-3 col-lg-3 col-md-4 col-sm-12 car-search">
-        <form action="" method="get">
+        <form action="{% url 'search' %}" method="GET">
+          {% csrf_token %}
           <div class="row">
             <div class="col-12 mb-2">
-              <input type="text" name="search-input" class="search-input">
+              <input type="text" name="keyword" class="search-input">
             </div>
             <div class="col-12">
               <input type="submit" value="search" class="search-button">
@@ -48,7 +49,6 @@
         </div>
       </div>
     </div>
-    {% comment %}  {% endcomment %}
     
     <nav aria-label="Page navigation example" class="my-4">
       <ul class="pagination">
