@@ -1,7 +1,7 @@
-from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Car, Brand
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .forms import BrandForm
 
 # Create your views here.
 
@@ -17,6 +17,7 @@ def car(request):
     }
     return render(request, 'cars/car.html', context)
 
+# =============================CAR================================
 
 def search(request):
     cars = Car.objects.order_by('created_date')
@@ -29,9 +30,24 @@ def search(request):
     }
     return render(request, 'cars/search.html', context)
 
+# ===========================search=================================
+
 def brand(request):
     brand = Brand.objects.all()
     context = {
         'brand':brand
+    }
+    return render(request, 'cars/brand.html', context)
+
+def create_brand(request):
+    if request.method == 'POST':
+        brandform = BrandForm(request.POST or None)
+        if brandform.is_valid():
+            brandform.save()
+            return redirect('brand')
+        else: 
+            brandform = BrandForm()
+    context = {
+        'brandform': brandform
     }
     return render(request, 'cars/brand.html', context)
