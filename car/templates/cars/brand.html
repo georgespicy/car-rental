@@ -25,7 +25,7 @@
                         <tr>
                             <td class="text-center">{{brands.brand_name}}</td>
                             <td class="text-center">{{brands.date_created}}</td>
-                            <td class="text-center"><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+                            {% comment %} <td class="text-center"><a href="{% url 'delete_brand' brand.id %}"><i class="fas fa-trash-alt"></i></a></td> {% endcomment %}
                             <td class="text-center"><a href="#"><i class="fas fa-edit"></i></a></td>
                         </tr>
                     {% endfor %}
@@ -33,10 +33,11 @@
             </table>
         </div>
         <div class="col-xxl-4 col-lg-4 col-md-12 col-sm-12">
-            <form class="p-4 rounded shadow-md my-2" method="POST">
+            <form class="p-4 rounded shadow-md my-2" action="{% url 'create_brand' %}" method="POST">
                 {% csrf_token %}
-                {% comment %} {{brandform | crispy}} {% endcomment %}
-                {{brandform.as_p}}
+                <div class="col-12 mb-2">
+                    <input type="text" name="brand" class="search-input">
+                </div>
                 <input type="submit" value="create brand" class="btn btn-primary my-2">
             </form>
         </div>

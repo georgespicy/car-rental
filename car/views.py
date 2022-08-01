@@ -1,3 +1,4 @@
+from pyexpat.errors import messages
 from django.shortcuts import render, redirect
 from .models import Car, Brand
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -41,13 +42,18 @@ def brand(request):
 
 def create_brand(request):
     if request.method == 'POST':
-        brandform = BrandForm(request.POST or None)
-        if brandform.is_valid():
-            brandform.save()
-            return redirect('brand')
-        else: 
-            brandform = BrandForm()
+        brand_name = request.POST['brand']
+        if brand_name:
+            brand = Brand(brand_name=brand_name)
+            brand.save()
+            return redirect('brand')       
     context = {
-        'brandform': brandform
+        
     }
     return render(request, 'cars/brand.html', context)
+
+
+def delete_brand(request, id):
+    brand = Brand.objects.get(brand,id=id)
+    brand.delete()
+    return redirect('brand')
