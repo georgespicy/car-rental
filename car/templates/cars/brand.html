@@ -21,11 +21,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                   {% for brands in brand %}
+                   {% for brand in brands %}
                         <tr>
-                            <td class="text-center">{{brands.brand_name}}</td>
-                            <td class="text-center">{{brands.date_created}}</td>
-                            {% comment %} <td class="text-center"><a href="{% url 'delete_brand' brand.id %}"><i class="fas fa-trash-alt"></i></a></td> {% endcomment %}
+                            <td class="text-center">{{brand.brand_name}}</td>
+                            <td class="text-center">{{brand.date_created}}</td>
+                            <td class="text-center"><a href="{% url 'delete_brand' brand.id %}"><i class="fas fa-trash-alt"></i></a></td> 
                             <td class="text-center"><a href="#"><i class="fas fa-edit"></i></a></td>
                         </tr>
                     {% endfor %}

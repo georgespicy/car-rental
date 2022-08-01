@@ -34,9 +34,9 @@ def search(request):
 # ===========================search=================================
 
 def brand(request):
-    brand = Brand.objects.all()
+    brands = Brand.objects.all()
     context = {
-        'brand':brand
+        'brands':brands
     }
     return render(request, 'cars/brand.html', context)
 
@@ -54,6 +54,6 @@ def create_brand(request):
 
 
 def delete_brand(request, id):
-    brand = Brand.objects.get(brand,id=id)
+    brand = Brand.objects.get(id=id)
     brand.delete()
     return redirect('brand')
