@@ -102,7 +102,7 @@ class Car(models.Model):
         ['jpg', 'jpeg'])], upload_to='cars_images', blank=True)
     car_photo_4 = models.ImageField(validators=[FileExtensionValidator(
         ['jpg', 'jpeg'])], upload_to='cars_images', blank=True)
-    features = MultiSelectField(choices=features_choices)
+    features = MultiSelectField(choices=features_choices, blank=True)
     body_style = models.CharField(max_length=200)
     miles = models.PositiveIntegerField()
     doors = models.CharField(choices=door_choices, max_length=10)

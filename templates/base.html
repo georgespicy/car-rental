@@ -27,11 +27,25 @@
               <a class="nav-link" href="{% url 'about' %}">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'brand' %}">Brand</a>
+              <a class="nav-link" href="{% url 'car' %}">Vehicle</a>
+            </li>
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_staff %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'brand' %}">Dashboard</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'car' %}">Cars</a>
+              <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
             </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            {% endif %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact' %}">Contact</a>
             </li>
