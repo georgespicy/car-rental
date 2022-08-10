@@ -5,7 +5,7 @@
 {% block main %}
 <div class="about-us-page">
     <div class="about-us-page-words">
-        <h1 class="text-center">Brand</h1>
+        <h1 class="text-center"><a href="\admin" class="text-center text-warning text-decoration-none">Admin Panel >> </a> Brand</h1>
     </div>
 </div>
 <div class="container">
@@ -26,7 +26,7 @@
                             <td class="text-center">{{brand.brand_name}}</td>
                             <td class="text-center">{{brand.date_created}}</td>
                             <td class="text-center"><a href="{% url 'delete_brand' brand.id %}"><i class="fas fa-trash-alt"></i></a></td> 
-                            <td class="text-center"><a href="#"><i class="fas fa-edit"></i></a></td>
+                            <td class="text-center"><a href="{% url 'brand_update' brand.id %}"><i class="fas fa-edit"></i></a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

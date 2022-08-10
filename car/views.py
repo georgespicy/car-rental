@@ -1,8 +1,9 @@
 from pyexpat.errors import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Car, Brand
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import BrandForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -51,6 +52,29 @@ def create_brand(request):
         
     }
     return render(request, 'cars/brand.html', context)
+
+
+
+@login_required
+def brand_update(request,id):
+    brand = get_object_or_404(Brand,id=id)
+    form = BrandForm(request.POST or None , instance= brand)
+    if request.method == 'POST':
+        form = BrandForm(request.POST or None , instance= brand)
+        if form.is_valid():
+            form.save()
+            brand_update = f'You have update {brand.brand_name} brand'
+            # messages.error(request,brand_update)
+            return redirect('brand')
+        else:
+          form = BrandForm(request.POST)  
+          
+    context = {
+        'brand':brand,
+        'form':form
+    }
+    return render(request, 'cars/brand_update.html', context)
+
 
 
 def delete_brand(request, id):
