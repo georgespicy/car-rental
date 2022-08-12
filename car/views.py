@@ -101,4 +101,4 @@ def booking(request, id):
             'car':car,
             'form':form
         }
-        return render(request,'car_app/booking.html',context)
+        return render(request,'cars/booking.html',context)

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'car',
     'account',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
