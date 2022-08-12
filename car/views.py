@@ -2,7 +2,7 @@ from pyexpat.errors import messages
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Car, Brand
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .forms import BrandForm
+from .forms import BrandForm, BookingForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -81,3 +81,24 @@ def delete_brand(request, id):
     brand = Brand.objects.get(id=id)
     brand.delete()
     return redirect('brand')
+
+    # =========================Booking=======================
+def booking(request, id):
+        car = get_object_or_404(Car, id=id)
+        form = BookingForm(request.POST or None)
+        if request.method == 'POST':
+            form = BookingForm(request.POST or None)
+            if form.is_valid():
+                instance = form.save(commit=False)
+                instance.user = request.user
+                instance.car = car
+                instance.save()
+                messages.success(request, 'you have successfully booked the car')
+                return redirect('home')
+            else:
+                form = BookingForm(request.POST)
+        context ={
+            'car':car,
+            'form':form
+        }
+        return render(request,'car_app/booking.html',context)

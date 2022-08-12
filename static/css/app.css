@@ -10,6 +10,7 @@
     text-decoration: none;
 }
 
+
 .navbar,
 .dropdown-menu{
     background-color: #46494c;
@@ -461,4 +462,10 @@
     .rent{
         padding-top: 6%;
     }
+}
+
+/* ===================================service page================================ */
+
+.card { 
+    border-radius: .7rem;
 }

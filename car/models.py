@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from django.core.validators import FileExtensionValidator
 from multiselectfield import MultiSelectField
+from account.models import User
 # Create your models here.
 
 
@@ -115,3 +116,53 @@ class Car(models.Model):
 
     def str(self):
         return self.car_name
+
+class Booking(models.Model):
+    state_choice = (
+        ('NI', 'Niger'),
+        ('BO', 'Borno '),
+        ('TA', 'Taraba'),
+        ('KD', 'Kaduna'),
+        ('BA', 'Bauchi'),
+        ('YO', 'Yobe'),
+        ('ZA', 'Zamfara'),
+        ('AD', 'Adamawa'),
+        ('KW', 'Kwara'),
+        ('KE', 'Kebbi'),
+        ('BE', 'Benue'),
+        ('PL', 'Plateau'),
+        ('KO', 'Kogi'),
+        ('OY', 'Oyo'),
+        ('NA', 'Nasarawa'),
+        ('SO', 'Sokoto'),
+        ('KT', 'Katsina'),
+        ('JI', 'Jigawa'),
+        ('CR', 'Cross River'),
+        ('KN', 'Kano'),
+        ('GO', 'Gombe'),
+        ('ED', 'Edo'),
+        ('DE', 'Delta'),
+        ('OG', 'Ogun'),
+        ('ON', 'Ondo'),
+        ('RI', 'Rivers'),
+        ('BY', 'Bayelsa'),
+        ('OS', 'Osun'),
+        ('FC', 'Fct'),
+        ('EN', 'Enugun'),
+        ('AK', 'Akwa Ibom'),
+        ('EK', 'Ekit'),
+        ('AB', 'Abia'),
+        ('EB', 'Ebonyi'),
+        ('IM', 'Imo'),
+        ('AN', 'Anambra'),
+        ('LA', 'Lagos'),
+    )
+    city = models.CharField(max_length=200)
+    to_state = models.CharField(max_length=10, choices=state_choice)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    car = models.OneToOneField(Car, on_delete=models.CASCADE)
+    booking_date = models.DateTimeField(auto_now_add=True)
+    To_agree = models.BooleanField(default=False, verbose_name='Car is Booked')
+    
+    def _str_(self):
+        return f"{self.user.first_name} booked {self.car.car_category} with the price {self.to_state}"
